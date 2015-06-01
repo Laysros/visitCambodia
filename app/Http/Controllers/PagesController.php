@@ -12,22 +12,13 @@ class PagesController extends Controller {
 	{
 		return view('includes.contact');
 	}
-	public function popular()
-	{
-		return view('includes.popular');
-	}
-	public function city()
-	{
-		return view('includes.city');
-	}
+	
+	
 	public function city1()
 	{
 		return view('includes.city1');
 	}
-	public function detail()
-	{
-		return view('includes.detail');
-	}
+	
 	
 	public function placesOfCity()
 	{

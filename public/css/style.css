@@ -245,7 +245,7 @@ a.here i{
 	font-size: 2em;
 	text-align: center;
 	text-transform: uppercase;
-	padding: 2.5em 0;
+	padding: 1em 0;
 	font-weight: 700;
 }
 .video-bottom{
@@ -860,7 +860,7 @@ ul.simply-left li a span{
 	padding: 1em 0;
 }
 .services {
-	padding: 4em 0 0;
+	padding: 0px 0 0;
 }
 h4.content-mid{
 	font-size:2.5em;

@@ -11,19 +11,24 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
-Route::get('/index', 'WelcomeController@index');
-Route::get('popular', 'PagesController@popular');
-Route::get('about', 'PagesController@about');
-Route::get('contact', 'PagesController@contact');
-Route::get('city', 'PagesController@city');
-Route::get('city1', 'PagesController@city1');
 
-Route::get('detail', 'PagesController@detail');
-Route::get('placesOfCity', 'PagesController@placesOfCity');
+
+Route::get('/', 'DataController@index');
+Route::get('index', 'DataController@index');
+Route::get('popular', 'DataController@popular');
+Route::get('about', 'ContactUsController@contact');
+Route::get('contact', 'ContactUsController@contact');
+Route::get('city', 'DataController@city');
+Route::get('city1', 'PagesController@city1');
+Route::get('placesOfCity', 'DataController@placesOfCity');
+Route::get('city+{name}', 'DataController@getPlaceByCity');
+Route::get('/{name}', 'DataController@getDetail');
+
+
 
 Route::get('index1', 'HomeController@index1');
 
+Route::get('places', 'DataController@getPlaces');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

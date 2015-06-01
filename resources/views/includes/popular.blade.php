@@ -4,7 +4,7 @@
 	<div class="header">		
 		<div class="banner banner-in">
 			<div class="container">
-				<h6><a href="index">HOME</a>/ <span>OUR STORY</span></h6>
+				<h6><a href="index">HOME</a>/ <span>POPULAR PLACES</span></h6>
 			</div>
 		</div>
 	</div>
@@ -13,41 +13,36 @@
 			<div class="story-our">
 				<h3>POPULAR PLACES</h3>
 				<div class="story">
+					@foreach($place->slice(0,2) as $popular)
 					<div class="col-md-6 story-popular">
-						<a href="detail"><img class="img-responsive " src="images/a1.jpg" alt=""></a>
-						<h6>Contrary to popular</h6>
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised word. Richard McClintock.</p>
+						<a href="{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
+						<h6>{{$popular['name']}}</h6>
+						<p>{{$popular['description']}}</p>
 					</div>
-					<div class="col-md-6  story-popular">
-						<a href="detail"><img class="img-responsive " src="images/a2.jpg" alt=""></a>
-						<h6>Contrary to popular</h6>
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised word. Richard McClintock.</p>
-					</div>		
+					@endforeach
 					<div class="clearfix"> </div>	
 			</div>
 			<div class="our">
+					@foreach($place->slice(2,1) as $popular)
 					<div class="col-md-5 our-in">
-						<a href="detail"><img class=" img-responsive" src="images/ab.jpg" alt="">  </a>
+						<a href="{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
 					</div>
 					<div class="col-md-7 in-our">
-						<h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </h5>
-						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
-						<p class="are">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised word. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</p>
+						<h3>{{$popular['name']}}</h3>
+						<p>{{$popular['description']}}</p>
 					</div>
+					@endforeach
 					<div class="clearfix"> </div>
-				</div>
+			</div>
 			<div class="story">
-					
-				<div class="col-md-6  story-popular">
-					<a href="detail"><img class="img-responsive " src="images/a2.jpg" alt=""></a>
-					<h6>Contrary to popular</h6>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised word. Richard McClintock.</p>
-				</div>
-				<div class="col-md-6 story-popular">
-					<a href="detail"><img class="img-responsive " src="images/a1.jpg" alt=""></a>
-					<h6>Contrary to popular</h6>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised word. Richard McClintock.</p>
-				</div>					
+					<@foreach($place->slice(3,4) as $popular)
+					<div class="col-md-6 story-popular">
+						<a href="{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
+						<h6>{{$popular['name']}}</h6>
+						<p>{{$popular['description']}}</p>
+					</div>
+					@endforeach
+				<div class="clearfix"> </div>					
 			</div>
 		</div>
 	</div>

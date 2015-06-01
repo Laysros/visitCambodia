@@ -3,8 +3,8 @@
 	<div class='body'>
 	<div class="banner">
 		<div class="container">	
-			<h1>Lorem Ipsum is simply dummy text</h1>
-			<p>excepteur sint occaecat cupidatat non proident</p>
+			<h1 style="background-color: rgba(0, 0, 0, 0.5);">Angkor : Amazing Heritage of the world</h1>
+			<p>Angkor is a region of Cambodia that served as the seat of the Khmer Empire</p>
 			<!--<a href="#" class="here"> START HERE<i> </i></a>-->
 		</div>
 	</div>
@@ -14,29 +14,20 @@
 			<div class="services">
 				<h3 >WHERE TO GO</h3>
 				<div class="grid-top-top">
+					@foreach($place as $home)
 					<div class="col-md-6 ">
 						<div class="col-md-6 service-grid">
-						 	<a href="detail" ><img class="img-responsive "  src="{{ asset('images/app.jpg') }}" alt="" /></a>
+						 	<a href="/{{$home['name']}}" ><img class="img-responsive "  src="{{$home['url']}}" alt="" /></a>
 						 </div>
 						 <div class="col-md-6 top-grid-right">
-							 <h4>Lorem ipsum dolor</h4>
-							 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,or randomised words which don't look even slightly believable.</p>
+							 <h4>{{$home['name']}}</h4>
+							 <p>{{$home['description']}}</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="col-md-6 ">
-						<div class="col-md-6 service-grid ">
-						 	<a href="detail" ><img class="img-responsive grass"  src="{{ asset('images/app1.jpg') }}" alt="" /></a>
-						 </div>
-						 <div class="col-md-6  top-grid-right">
-							 <h4>Sed ut perspiciatis</h4>
-							 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,or randomised words which don't look even slightly believable.</p>
-						</div>
-					</div>
+					@endforeach
 				</div>
-
 			</div>
-			
 		</div>
 
 		<!---->
@@ -81,5 +72,6 @@
 			</div>
 		
 		<!---->
-		@include('static.footer')
+		
 </body>
+@include('static.footer')
