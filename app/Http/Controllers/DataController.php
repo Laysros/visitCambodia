@@ -22,11 +22,7 @@ class DataController extends Controller {
 
 	public function getDetail($name){
 		$info = DataModel::getDetail($name);
-		/*foreach ($info as $a) {
-			foreach ($a as $b) {
-				print_r($b['name']);
-			}
-		}*/
+	
 	 	return view('includes.detail')->with('place', $info);
 	}
 
@@ -39,6 +35,11 @@ class DataController extends Controller {
 	{
 		$info = DataModel::getPlaceByCity($name);
 		return view('includes.placesOfCity')->with('place', $info);
+	}
+	public function getPlacesByTag($name)
+	{
+		$info = DataModel::getPlaceByTag($name);
+		return view('includes.tag')->with('place', $info);
 	}
 	public function popular()
 	{

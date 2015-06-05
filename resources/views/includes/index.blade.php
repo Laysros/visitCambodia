@@ -3,7 +3,7 @@
 	<div class='body'>
 	<div class="banner">
 		<div class="container">	
-			<h1 style="background-color: rgba(0, 0, 0, 0.5);">Angkor : Amazing Heritage of the world</h1>
+			<h1>Angkor : Amazing Heritage of the world</h1>
 			<p>Angkor is a region of Cambodia that served as the seat of the Khmer Empire</p>
 			<!--<a href="#" class="here"> START HERE<i> </i></a>-->
 		</div>
@@ -14,7 +14,7 @@
 			<div class="services">
 				<h3 >WHERE TO GO</h3>
 				<div class="grid-top-top">
-					@foreach($place as $home)
+					@foreach($place->slice(0,2) as $home)
 					<div class="col-md-6 ">
 						<div class="col-md-6 service-grid">
 						 	<a href="/{{$home['name']}}" ><img class="img-responsive "  src="{{$home['url']}}" alt="" /></a>
@@ -36,24 +36,13 @@
 			<div class="middle-top">
 			<h3>Recent Tour</h3>
 				<div class="brand">
+					@foreach($place->slice(3,4) as $home)
 					<div class="col-md-3 fashion"> 
-						<a class="detail"><img class="img-responsive" src="{{ asset('images/pi.jpg') }}" alt="">
-						<p>Brand Project<i> </i></p></a>
+						<a href="{{$home['name']}}"><img class="img-responsive" src="{{$home['url']}}" alt="">
+						<p>{{$home['name']}}<i> </i></p></a>
 					</div>
-					<div class="col-md-3 fashion"> 
-						<a class="detail"><img class="img-responsive" src="{{ asset('images/pi1.jpg') }}" alt="">
-						<p>Brand Project<i> </i></p></a>
-					</div>
-					<div class="col-md-3 fashion"> 
-						<a class="detail"><img class="img-responsive" src="{{ asset('images/pi2.jpg') }}" alt="">
-						<p>Brand Project<i> </i></p></a>
-						
-					</div>
-					<div class="col-md-3 fashion"> 
-						<a class="detail"><img class="img-responsive" src="{{ asset('images/pi3.jpg') }}" alt="">
-						<p>Brand Project<i> </i></p></a>
-					</div>
-					</div>
+					@endforeach
+				</div>
 			
 			</div>
 		</div>

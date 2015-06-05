@@ -19,7 +19,8 @@
 			</div>
 		</div>
 	</div>
-		@foreach($place->slice(0, 1) as $info)
+		
+		@foreach($place['places']->slice(0,1) as $info)
 		<div class="container">			
 				<h2>{{$info['name']}}</h2>
 			
@@ -44,7 +45,7 @@
 								<div class="item active">
 									<img src="{{$info['url']}}" alt="Chania" width="460" height="345">
 								</div>
-								@foreach($place->slice(1, 10) as $info)
+								@foreach($place['places'] as $info)
 								<div class="item">
 									<img src="{{$info['url']}}" alt="Chania" width="460" height="345">
 								</div>
@@ -79,7 +80,11 @@
 						<p>Date<br/> <span>{{$info['post_date']}}</span></p>
 					</div>
 					<div class="col-md-4 date">
-						<p>Tags<br/><span><a href="#">History</a> | <a href="#">Culture</a></span></p>
+						<p>Tags<br/><span>
+						@foreach($place['tags'] as $tag)
+						<a href="tag_{{$tag['name']}}">{{$tag['name']}}</a>&nbsp;
+						@endforeach
+						</span></p>
 					</div>
 					<div class="col-md-4 date">
 						<p>Views<br/><span>{{$info['count_view']}}</span></p>
@@ -91,6 +96,7 @@
 			{{$info['description']}}
 		</div>
 		@endforeach
+		
 
 <!-- Shere St -->
 	<div class="content-bottom-in">
@@ -113,14 +119,14 @@
 		<hr>
 		<div class="services">
 			<div class="grid-top-top">
-				@foreach($place->slice(0,2) as $info)
+				@foreach($place['related']->slice(0,2) as $info)
 				<div class="col-md-6 ">
 					<div class="col-md-6 service-grid">
 						<a href="detail"><img class="img-responsive " src="images/app.jpg" alt="" /></a>
 					</div>
 					<div class="col-md-6 top-grid-right">
-						<h4>Lorem ipsum dolor</h4>
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,or randomised words which don't look even slightly believable.</p>
+						<h4>{{$info['name']}}</h4>
+						<p>{{$info['description']}}</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

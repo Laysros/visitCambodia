@@ -3,10 +3,6 @@
 
 class PagesController extends Controller {
 
-	public function about()
-	{
-		return view('includes.about');
-	}
 
 	public function contact()
 	{

@@ -6,7 +6,7 @@
 		<div class="banner banner-in">
 			<div class="container">
 				@foreach($place['places']->slice(0,1) as $info)
-				<h6><a href="index">HOME</a>/ <a href="city">City</a>/<span>{{$info['city']}}</span></h6>
+				<h6><a href="index">HOME</a>/ <a href="">tag:</a><span>{{$info['tag']}}</span></h6>
 				@endforeach				
 			</div>
 		</div>
@@ -15,14 +15,14 @@
 	<div class="container">
 		<div class="single">
 			@foreach($place['places']->slice(0,4) as $info)
-			<a href="{{$info['name']}}">
-				<h3>{{$info['name']}}</h3>
-				<br>
-				<div class="col-md-7 need">
-					<img class="img-responsive" src="{{$info['image']}}" alt="">
-				</div>
-			</a>
 			<div class="single-middle">
+				<div class="col-md-7 need">
+					<a href="{{$info['name']}}">
+						<h3>{{$info['name']}}</h3>
+						<br>
+						<img class="img-responsive" src="{{$info['url']}}" alt="">
+					</a>
+				</div>
 				<div class="col-md-5 tag">
 					<div class="social-in">
 						<div class="col-md-4 date">
@@ -30,11 +30,11 @@
 						</div>
 						<div class="col-md-4 date">
 							<p>Tags<br/><span>
-							@foreach($place['tags'] as $tag)
+								@foreach($place['tags'] as $tag)
 								@if($tag['name']==$info['name'])
 								<a href="tag_{{$tag['tag']}}">{{$tag['tag']}}</a>&nbsp;
 								@endif
-							@endforeach
+								@endforeach
 							</span></p>
 						</div>
 						<div class="col-md-4 date">
@@ -42,7 +42,7 @@
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<p class="tag-in">AA
+					<p class="tag-in">
 						<span>{{$info['description']}}</span></p>
 					</div>
 					<div class="clearfix"> </div>
