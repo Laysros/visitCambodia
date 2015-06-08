@@ -17,6 +17,7 @@ Route::get('/', 'DataController@index');
 Route::get('index', 'DataController@index');
 Route::get('popular', 'DataController@popular');
 Route::get('contact', 'ContactUsController@contact');
+Route::get('about', 'DataController@about');
 Route::get('city', 'DataController@city');
 Route::get('city1', 'PagesController@city1');
 Route::get('placesOfCity', 'DataController@placesOfCity');

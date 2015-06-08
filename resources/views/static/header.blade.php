@@ -28,6 +28,7 @@
 						<li><a href="index" id='home'>HOME</a></li>
 						<li><a href="popular" id='famous_place'>FAMOUSE PLACES</a></li>
 						<li><a href="city" id='city'>CITIES</a></li>
+						<li><a href="about" id='about'>ABOUT US</a></li>
 						<li><a href="contact" id='contact'>CONTACT</a></li>
 					</ul>
 			

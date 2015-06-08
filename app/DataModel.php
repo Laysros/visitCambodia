@@ -49,6 +49,17 @@ class DataModel extends Model{
 				->groupBy('place.id')
 				->get();
 
+		if (sizeof($related)==0) {
+			$related = DataModel::join('tag', 'tag.place_id' , '=', 'place.id')
+				->join('picture', 'picture.place_id' , '=', 'place.id')
+				->where('tag.name', '=', $tags[0]['name'])
+				->whereNotIn('place.name', [$name])
+				->select('place.name', 'place.description', 'picture.name as url')
+				->groupBy('place.id')
+				->get();
+			
+		}
+
 		$result = [];
 		$result['places'] = $place;
 		$result['tags']=$tags;

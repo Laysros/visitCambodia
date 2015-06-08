@@ -25,6 +25,11 @@ class DataController extends Controller {
 	
 	 	return view('includes.detail')->with('place', $info);
 	}
+	public function about()
+	{
+		
+		return view('includes.about');
+	}
 
 	public function city()
 	{

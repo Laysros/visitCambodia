@@ -12,9 +12,9 @@
 		</div>
 	</div>
 	
-	<div class="container">
+	<!-- <div class="container">
 		<div class="single">
-			@foreach($place['places']->slice(0,4) as $info)
+		@foreach($place['places']->slice(0,4) as $info)
 			<div class="single-middle">
 				<div class="col-md-7 need">
 					<a href="{{$info['name']}}">
@@ -50,7 +50,49 @@
 			</div>
 			@endforeach
 		</div>
+	</div> -->
+
+	<!-- Show places -->
+	<div class="container">
+		<div class="single">
+			@foreach($place['places']->slice(0,4) as $info)
+			<div class="single-middle">
+				<div class="col-md-7 need">
+					<a href="{{$info['name']}}">
+						<h3>{{$info['name']}}</h3>
+						<br>
+						<img class="img-responsive" src="{{$info['url']}}" alt="">
+					</a>
+				</div>
+				<div class="col-md-5 tag" style="padding-top:80px">
+					<div class="social-in">
+						<div class="col-md-4 date">
+							<p>Date <span>{{$info['post_date']}}</span></p>
+						</div>
+						<div class="col-md-4 date">
+							<p>Tags<br/><span>
+							@foreach($place['tags'] as $tag)
+								@if($tag['name']==$info['name'])
+								<a href="tag_{{$tag['tag']}}">{{$tag['tag']}}</a>&nbsp;
+								@endif
+							@endforeach
+							</span></p>
+						</div>
+						<div class="col-md-4 date">
+							<p>Views<span>{{$info['count_view']}}</span></p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<p class="tag-in">
+						<span>{{$info['description']}}</span></p>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			@endforeach
+		</div>
 	</div>
+	<!-- End show places -->
 
 
 

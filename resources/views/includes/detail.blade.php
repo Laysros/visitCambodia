@@ -122,7 +122,7 @@
 				@foreach($place['related']->slice(0,2) as $info)
 				<div class="col-md-6 ">
 					<div class="col-md-6 service-grid">
-						<a href="detail"><img class="img-responsive " src="images/app.jpg" alt="" /></a>
+						<a href="{{$info['name']}}"><img class="img-responsive " src="images/app.jpg" alt="" /></a>
 					</div>
 					<div class="col-md-6 top-grid-right">
 						<h4>{{$info['name']}}</h4>

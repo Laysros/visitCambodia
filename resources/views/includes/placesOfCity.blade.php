@@ -11,19 +11,20 @@
 			</div>
 		</div>
 	</div>
-	
+
+	<!-- Show places -->
 	<div class="container">
 		<div class="single">
 			@foreach($place['places']->slice(0,4) as $info)
-			<a href="{{$info['name']}}">
-				<h3>{{$info['name']}}</h3>
-				<br>
-				<div class="col-md-7 need">
-					<img class="img-responsive" src="{{$info['image']}}" alt="">
-				</div>
-			</a>
 			<div class="single-middle">
-				<div class="col-md-5 tag">
+				<div class="col-md-7 need">
+					<a href="{{$info['name']}}">
+						<h3>{{$info['name']}}</h3>
+						<br>
+						<img class="img-responsive" src="{{$info['image']}}" alt="">						
+					</a>
+				</div>
+				<div class="col-md-5 tag" style="padding-top:80px">
 					<div class="social-in">
 						<div class="col-md-4 date">
 							<p>Date <span>{{$info['post_date']}}</span></p>
@@ -42,17 +43,18 @@
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<p class="tag-in">AA
+					<p class="tag-in">
 						<span>{{$info['description']}}</span></p>
-					</div>
 					<div class="clearfix"> </div>
 				</div>
+				<div class="clearfix"> </div>
 			</div>
 			@endforeach
 		</div>
 	</div>
 
 
+	<!-- End show places -->
 
 
 
