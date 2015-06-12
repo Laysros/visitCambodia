@@ -1,11 +1,10 @@
 @include('static.header')
 <body>
 	<div class='body'>
-	<div class="banner">
+	<div class="banner" style="">
 		<div class="container">	
 			<h1>Angkor : Amazing Heritage of the world</h1>
 			<p>Angkor is a region of Cambodia that served as the seat of the Khmer Empire</p>
-			<!--<a href="#" class="here"> START HERE<i> </i></a>-->
 		</div>
 	</div>
 	<!---->
@@ -17,7 +16,7 @@
 					@foreach($place->slice(0,2) as $home)
 					<div class="col-md-6 ">
 						<div class="col-md-6 service-grid">
-						 	<a href="/{{$home['name']}}" ><img class="img-responsive "  src="{{$home['url']}}" alt="" /></a>
+						 	<a href="place_{{$home['name']}}" ><img class="img-responsive "  src="{{$home['url']}}" alt="" /></a>
 						 </div>
 						 <div class="col-md-6 top-grid-right">
 							 <h4>{{$home['name']}}</h4>
@@ -38,7 +37,7 @@
 				<div class="brand">
 					@foreach($place->slice(3,4) as $home)
 					<div class="col-md-3 fashion"> 
-						<a href="{{$home['name']}}"><img class="img-responsive" src="{{$home['url']}}" alt="">
+						<a href="place_{{$home['name']}}"><img class="img-responsive" src="{{$home['url']}}" alt="">
 						<p>{{$home['name']}}<i> </i></p></a>
 					</div>
 					@endforeach

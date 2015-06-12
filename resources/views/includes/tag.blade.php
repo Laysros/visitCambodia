@@ -58,7 +58,7 @@
 			@foreach($place['places']->slice(0,4) as $info)
 			<div class="single-middle">
 				<div class="col-md-7 need">
-					<a href="{{$info['name']}}">
+					<a href="place_{{$info['name']}}">
 						<h3>{{$info['name']}}</h3>
 						<br>
 						<img class="img-responsive" src="{{$info['url']}}" alt="">

@@ -23,7 +23,21 @@ Route::get('city1', 'PagesController@city1');
 Route::get('placesOfCity', 'DataController@placesOfCity');
 Route::get('city+{name}', 'DataController@getPlaceByCity');
 Route::get('tag_{name}', 'DataController@getPlacesByTag');
-Route::get('/{name}', 'DataController@getDetail');
+Route::get('place_{name}', 'DataController@getDetail');
+Route::get('test', function(){
+	return view('includes.test');
+});
+Route::get('/{error}', function(){
+	return view('includes.404');
+});
+
+
+
+
+
+
+
+
 
 
 

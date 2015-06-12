@@ -11,10 +11,7 @@
 	<div class="container">
 		<div class="work">		
 			<h3>Cities</h3>
-		</div>
-
-		<div class="products-bottom">
-			<!-- Start loop -->
+			<div class="products-bottom">
 			@foreach($city->slice(0,6) as $province)
 			<div class="col-md-4 work-grid">
 				<div class="view view-tenth">
@@ -32,42 +29,48 @@
 				</div>
 			</div>			 
 			@endforeach
-			<!-- End loop -->	  
-
-
-			<div class='body'>
-
-			</div>
-
 			<div class="clearfix"> </div>	
+		</div>
 		</div>
 	</div>
 
+	
 
+	<!-- Start test Scrool-->
+	<div ng-app='myApp' ng-controller='DemoController'>
+	  <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+	    <div ng-repeat="item in items">Item number {{$city[0]['name']}}: {{$city[0]['image']}}</div>
+	  </div>
+	</div>
+
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', ['infinite-scroll']);
+			myApp.controller('DemoController', function($scope) {
+		  $scope.images = ["a", "b", "c"];
+
+		  $scope.loadMore = function() {
+		    var last = $scope.images[$scope.images.length - 1];
+		    for (var i = 1; i < $city.length; i++) {
+		    	$scope.images.push($city[i+last]['name']);	
+		    };
+		      
+		    }
+		  };
+		});
+
+
+	</script>
+	<!-- End scrool -->
+	
 	<div class="span7 text-center">
 		<br>
 		<button type="button" id="showMore" class="btn btn-primary btn-lg">Show More cities</button>
 	</div>
-	<script>
-		$('#showMore').on('click', function(e){
-			e.preventDefault();
-			$.ajax({
-				url: 'include.city1',
-				type: 'POST',
-				success:function(data){
-				//alert(data);
-				$('.body').html(data);
-				$(this).find('showMore[type="button"]').attr('disabled','disabled');
-			},
-			error: function(error){
-				return false;
-			}
-		});
-			
-		});
-	</script>
 
-	<!---->
+
+	<!--Start scrool Load data-->
+
+	<!--End scrool Load data-->
 	<div class="content-bottom-in">
 		<div class="container">
 			<ul class="social">

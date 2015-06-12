@@ -15,7 +15,7 @@
 			<div class="story">
 				@foreach($place->slice(0,2) as $popular)
 				<div class="col-md-6 story-popular">
-					<a href="{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
+					<a href="place_{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
 					<h6>{{$popular['name']}}</h6>
 					<p>{{$popular['description']}}</p>
 				</div>
@@ -26,7 +26,7 @@
 		<div class="our">
 			@foreach($place->slice(2,1) as $popular)
 			<div class="col-md-5 our-in">
-				<a href="{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
+				<a href="place_{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
 			</div>
 			<div class="col-md-7 in-our">
 				<h3>{{$popular['name']}}</h3>
@@ -38,7 +38,7 @@
 		<div class="story">
 			@foreach($place->slice(4,2) as $popular)
 			<div class="col-md-6 story-popular">
-				<a href="{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
+				<a href="place_{{$popular['name']}}"><img class="img-responsive " src="{{$popular['url']}}" alt=""></a>
 				<h6>{{$popular['name']}}</h6>
 				<p>{{$popular['description']}}</p>
 			</div>

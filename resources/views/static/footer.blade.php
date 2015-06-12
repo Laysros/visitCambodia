@@ -21,7 +21,6 @@
 							<ul  class="nav-bottom">
 								<li><a href="contact">FAQ</a></li>						
 								<li><a href="contact">Contact us</a></li>
-								<li><a href="#">Policies</a></li>
 								<p class="footer-class">Copyright © 2015 VisitCambodia Design by  <a href="" target="_blank">ITC</a></p>
 								
 							</ul>

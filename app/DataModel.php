@@ -48,7 +48,7 @@ class DataModel extends Model{
 				->select('place.name', 'place.description', 'picture.name as url')
 				->groupBy('place.id')
 				->get();
-
+		
 		if (sizeof($related)==0) {
 			$related = DataModel::join('tag', 'tag.place_id' , '=', 'place.id')
 				->join('picture', 'picture.place_id' , '=', 'place.id')
